@@ -17,5 +17,23 @@
         <button type="submit">Add</button>
     </div>
   </form>
+
+<!-- Can I just take a second to say that I love Jinja, 
+like omg passing data is so nice.-->
+
+<!-- Going through all the todolist and displaying them.-->
+  {% for todo in todo_list %}
+    <p>i{{todo.id}} | {{todo.title}}</p>
+    
+    {% if todo.complete == False %}
+        <span>Not Complete</span>
+    {%else%}
+        <span>Complete</span>
+    {%endif%}
+
+    <a href="/">Update</a>
+    <a href="/">Delete</a>
+
+  {%endfor%}
 </body>
 </html>
